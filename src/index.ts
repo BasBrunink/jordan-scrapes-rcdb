@@ -13,7 +13,7 @@ import * as fs from 'fs';
 
 	const totalRollerCoasters = parseInt($('.int').text());
 	// Assume 24 per page
-	const totalPages = Math.round(totalRollerCoasters / 24);
+	const totalPages = Math.ceil(totalRollerCoasters / 24);
 
 	console.log('total pages', totalPages);
 
