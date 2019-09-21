@@ -50,7 +50,6 @@ export async function getDetails(detailsLink: string) {
 
 	const $ = cheerio.load(axiosResponse.data);
 
-	const rows = $('#statTable tr');
 
 	const rollerCoaster: any = {
 		name: $('#feature h1').text(),
@@ -78,6 +77,7 @@ export async function getDetails(detailsLink: string) {
 
 	// console.log('featured stuff', operatingInfoHtml$('div').text(), `<div>${featuredHtml.split('<br>')[2]}</div>`);
 
+	const rows = $('#statTable tr');
 	for (let i = 0; i < rows.length; i++) {
 		const row$ = cheerio.load(rows[i]);
 		if (row$('th').text().toLowerCase() === 'elements') {
