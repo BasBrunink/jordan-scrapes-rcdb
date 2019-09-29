@@ -1,4 +1,4 @@
-# Jordan Scrapes SteamDB
+# Jordan Scrapes RCDB
 
 This scrapes the [Roller Coaster Database](https://rcdb.com/) for all North American roller coasters. It could easily be adjusted by changing the region url to whatever region you wanted to target based on the url you found on rcdb.com.
 
