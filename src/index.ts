@@ -90,9 +90,18 @@ export async function getDetails(detailsLink: string) {
 	$('section:nth-of-type(2) .stat-tbl tr').toArray().map(element => {
 		let header = $(element).find('th').text();
 		header = camelize(header);
-		const cell = $(element).find('span').text();
-		if (!undesirableStats.includes(header)) {
-			rollerCoaster[header] = cell;
+		if (header === 'inversions' || header == 'duration') {
+			const span = $(element).find('td').text();
+			if (!undesirableStats.includes(header)) {
+				rollerCoaster[header] = span;
+			}
+
+		}
+		else {
+			const span = $(element).find('span').text();
+			if (!undesirableStats.includes(header)) {
+				rollerCoaster[header] = span;
+			}
 		}
 	});
 
