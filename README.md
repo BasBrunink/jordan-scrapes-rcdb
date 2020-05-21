@@ -20,10 +20,6 @@ After installing [NodeJS](https://nodejs.org/en/) you should be able to just run
 npm i
 ```
 
-### Unit Testing
-
-`npm test`
-
 ## Built With
 
 * [Axios](https://github.com/axios/axios) - HTTP request library
