@@ -73,7 +73,13 @@ export async function getDetails(detailsLink: string) {
         country: $('#feature > div > a:nth-of-type(4)').text(),
         link: detailsLink,
         make: $('#feature .scroll:nth-of-type(2) a:nth-of-type(1)').text(),
-        model: $('#feature .scroll:nth-of-type(2) a:nth-of-type(2)').text()
+        model: $('#feature .scroll:nth-of-type(2) a:nth-of-type(2)').text(),
+        type: $('#feature ul:nth-of-type(1) > li:nth-of-type(2) a:nth-of-type(1)').text(),
+        design: $('#feature ul:nth-of-type(1) > li:nth-of-type(3) a:nth-of-type(1)').text(),
+        // this will have to be smarter
+        length: $('.stat-tbl tr:nth-of-type(1) span:nth-of-type(1)').text(),
+        height: $('.stat-tbl tr:nth-of-type(2) span:nth-of-type(1)').text(),
+        drop: $('.stat-tbl tr:nth-of-type(2) span:nth-of-type(1)').text()
     };
 
     const featuredHtml = $('#feature').html();
