@@ -14,7 +14,7 @@
 	"author": "Jordan Hansen",
 	"license": "ISC",
 	"dependencies": {
-		"axios": "^0.21.1",
+		"axios": "^0.21.2",
 		"cheerio": "^1.0.0-rc.3",
 		"json2csv": "^4.5.3"
 	},
