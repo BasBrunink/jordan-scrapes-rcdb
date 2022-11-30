@@ -2,6 +2,29 @@ import axios, { AxiosRequestConfig } from 'axios';
 import cheerio from 'cheerio';
 import * as json2csv from 'json2csv';
 import * as fs from 'fs';
+interface RollerCoaster  {
+	name: string,
+	parkName: string,
+		city: string,
+		state: string,
+		country: string,
+		link: string,
+		make: string,
+		model: string,
+		type: string,
+		design: string,
+		length: string,
+		height: string,
+		speed: string,
+		inversions: string,
+		verticalAngle: string,
+		duration: string,
+		'g-Force': string,
+		drop: string
+		active?: boolean,
+		started?: string,
+		ended?: string
+}
 
 (async () => {
 	const domain = 'https://rcdb.com';
@@ -64,7 +87,7 @@ export async function getDetails(detailsLink: string) {
 
 	const $ = cheerio.load(axiosResponse.data);
 
-	const rollerCoaster: any = {
+	const rollerCoaster: RollerCoaster = {
 		name: $('#feature h1').text(),
 		parkName: $('#feature > div > a:nth-of-type(1)').text(),
 		city: $('#feature > div > a:nth-of-type(2)').text(),
@@ -118,7 +141,7 @@ export async function getDetails(detailsLink: string) {
 		rollerCoaster.started = operatingInfoHtml$('div time:nth-of-type(1)').attr('datetime');
 	}
 
-	// console.log('featured stuff', operatingInfoHtml$('div').text(), `<div>${featuredHtml.split('<br>')[2]}</div>`);
+	console.log('featured stuff', operatingInfoHtml$('div').text(), `<div>${featuredHtml.split('<br>')[2]}</div>`);
 
 	const rows = $('#statTable tr');
 	for (let i = 0; i < rows.length; i++) {
